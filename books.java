@@ -15,76 +15,73 @@ public class books
 
 
         boolean wahl = true;
-        while (true)
+        while (wahl)
         {
-            do
+            System.out.println("\nLibrary Menu:");
+            System.out.println("\n\n1. Display all books");
+            System.out.println("2. Add a book");
+            System.out.println("3. Delete a book by ISBN number");
+            System.out.println("4. Exit");
+            System.out.print("\nEnter your choice: ");
+
+            choice = scanner.nextInt();
+
+            scanner.nextLine();
+
+            switch (choice)
             {
-                System.out.println("\nLibrary Menu:");
-                System.out.println("\n\n1. Display all books");
-                System.out.println("2. Add a book");
-                System.out.println("3. Delete a book by ISBN number");
-                System.out.println("4. Exit");
-                System.out.print("\nEnter your choice: ");
+                case 1:
+                    library.displayLibraryBooks();
+                    wahl = false;
+                    break;
 
-                choice = scanner.nextInt();
+                case 2:
+                    System.out.print("\nEnter Author: ");
+                    String author = scanner.nextLine();
 
-                scanner.nextLine();
+                    System.out.print("Enter Title: ");
+                    String title = scanner.nextLine();
 
-                switch (choice)
-                {
-                    case 1:
-                        library.displayLibraryBooks();
-                        wahl = false;
-                        break;
+                    System.out.print("Enter year: ");
+                    int madeIn = scanner.nextInt();
 
-                    case 2:
-                        System.out.print("\nEnter Author: ");
-                        String author = scanner.nextLine();
+                    System.out.print("Enter ISBN number: ");
+                    int ISBN = scanner.nextInt();
+                    scanner.nextLine();
 
-                        System.out.print("Enter Title: ");
-                        String title = scanner.nextLine();
+                    Book newBook = new Book(author, title, madeIn, ISBN);
+                    library.addBook(newBook);
+                    System.out.println("\nBook added.");
+                    wahl = false;
+                    break;
 
-                        System.out.print("Enter year: ");
-                        int madeIn = scanner.nextInt();
+                case 3:
+                    System.out.print("Enter ISBN number to delete: ");
+                    int isbnToDelete = scanner.nextInt();
 
-                        System.out.print("Enter ISBN number: ");
-                        int ISBN = scanner.nextInt();
-                        scanner.nextLine();
+                    scanner.nextLine();
 
-                        Book newBook = new Book(author, title, madeIn, ISBN);
-                        library.addBook(newBook);
-                        System.out.println("\nBook added.");
-                        wahl = false;
-                        break;
+                    if (library.deleteBook(isbnToDelete))
+                    {
+                        System.out.println("Book deleted.");
+                    }
 
-                    case 3:
-                        System.out.print("Enter ISBN number to delete: ");
-                        int isbnToDelete = scanner.nextInt();
+                    else
+                    {
+                        System.out.println("Book not found.");
+                    }
 
-                        scanner.nextLine();
+                    wahl = false;
+                    break;
 
-                        if (library.deleteBook(isbnToDelete))
-                        {
-                            System.out.println("Book deleted.");
-                        }
+                case 4:
+                    System.out.println("Exiting program.");
+                    wahl = true;
+                    break;
 
-                        else
-                        {
-                            System.out.println("Book not found.");
-                        }
-
-                        wahl = false;
-                        break;
-
-                    case 4:
-                        System.out.println("Exiting program.");
-                        wahl = true;
-                        break;
-
-                    default:
-                        System.out.println("Invalid choice.");
-                        wahl = true;
-                }
+                default:
+                    System.out.println("Invalid choice.");
+                    wahl = true;
             }
         }
     }
