@@ -86,8 +86,6 @@ public class books
                         wahl = true;
                 }
             }
-
-            while (choice != 4);
         }
     }
 }
