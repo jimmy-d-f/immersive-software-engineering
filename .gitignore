@@ -1,29 +1,7 @@
-# Ignore VS Code settings
+﻿# Ignore VS Code settings
 .vscode/
 
-# Ignore compiled C files
+# Ignore compiled files
 *.o
 *.exe
 *.out
-
-# Ignore system files/folders outside your project
-Anwendungsdaten/
-Cookies/
-Druckumgebung/
-Eigene Dateien/
-Lokale Einstellungen/
-Netzwerkumgebung/
-Recent/
-SendTo/
-Startmenü/
-AppData/
-OneDrive/
-Desktop/
-Documents/
-Downloads/
-Music/
-Pictures/
-Videos/
-*.ini
-*.log
-*.bat
