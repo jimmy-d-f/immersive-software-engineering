@@ -1,0 +1,2 @@
+void calcFahrenheit();
+void calcCelsius();

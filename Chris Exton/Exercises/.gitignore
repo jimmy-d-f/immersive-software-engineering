@@ -1,0 +1,40 @@
+*.exe
+*.ilk
+*.obj
+*.pdb
+*.lib
+*.dll
+*.log
+*.tmp
+*.user
+*.suo
+
+# Ignore all parent folders and system directories
+Anwendungsdaten/
+Cookies/
+Druckumgebung/
+Eigene Dateien/
+Lokale Einstellungen/
+Netzwerkumgebung/
+Recent/
+SendTo/
+Startmenü/
+AppData/
+OneDrive/
+Desktop/
+Documents/
+Downloads/
+Music/
+Pictures/
+Videos/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore compiled C files
+*.o
+*.exe
+*.out
+
+# Ignore any system folders accidentally picked up
+../../*
