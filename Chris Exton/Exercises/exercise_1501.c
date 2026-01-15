@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void compute_ops(int* a, int* b);
+
 int main() 
 {
     int a = 1;
