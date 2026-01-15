@@ -14,32 +14,33 @@ int main(void)
 {
     char choice, again;
 
-    do 
-    {
-        printf("Do you want to convert from Fahrenheit to Celsius (F) or Celsius to Fahrenheit (C)? ");
-        scanf(" %c", &choice);
-
-        if (choice == 'F' || choice == 'f') 
+    error:
+        do 
         {
-            calcCelsius();
-        }
-        else if (choice == 'C' || choice == 'c') 
-        {
-            calcFahrenheit();
-        }
-        else 
-        {
-            printf("Invalid choice. Please enter 'F' or 'C'.\n");
-            continue;
-        }
+            printf("Do you want to convert from Fahrenheit to Celsius (F) or Celsius to Fahrenheit (C)? ");
+            scanf(" %c", &choice);
 
-        printTemperature();
+            if (choice == 'F' || choice == 'f') 
+            {
+                calcCelsius();
+            }
+            else if (choice == 'C' || choice == 'c') 
+            {
+                calcFahrenheit();
+            }
+            else 
+            {
+                printf("Invalid choice. Please enter 'F' or 'C'.\n");
+                goto error;
+            }
 
-        printf("Would you like to perform another conversion? (Y/N): ");
-        scanf(" %c", &again);
+            printTemperature();
 
-    } 
-    while (again == 'Y' || again == 'y');
+            printf("Would you like to perform another conversion? (Y/N): ");
+            scanf(" %c", &again);
+
+        } 
+        while (again == 'Y' || again == 'y');
 
     printf("Thank you for using the temperature converter. Goodbye!\n");
     return 0;
