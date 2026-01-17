@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "1_3.h"
 
-int main() 
+int main(void) 
 {
     error:
-        printf("Do you want to convert from Fahrenheit to Celsius (F) or Celsius to Fahrenheit (C)? ");
+        printf("Do you want to convert from Fahrenheit to Celsius (C) or Celsius to Fahrenheit (F)? ");
         char choice;
         scanf(" %c", &choice);
         if (choice == 'F' || choice == 'f') 
