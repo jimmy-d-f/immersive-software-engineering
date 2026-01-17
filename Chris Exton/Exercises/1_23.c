@@ -15,7 +15,6 @@ int main()
     while (fgets(line, sizeof(line), file)) 
     {
         char *comment = strstr(line, "//");
-        size_t len = strlen(line);
         if (comment != NULL) 
         {
             *comment = '\0'; 
