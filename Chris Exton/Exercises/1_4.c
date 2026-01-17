@@ -1,14 +1,8 @@
 #include <stdio.h>
+#include "1_4.h"
 
 #define MAX 100
-
-void calcFahrenheit(void);
-void calcCelsius(void);
-void printTemperature(void);
-
-float celsiusHistory[MAX];
-float fahrenheitHistory[MAX];
-int historyCount = 0;
+#define SAVE 1
 
 int main(void)
 {
@@ -80,17 +74,20 @@ void calcCelsius(void)
     historyCount++;
 }
 
-void printTemperature(void)
-{
-    printf("\n--- Conversion History ---\n");
 
-    for (int i = 0; i < historyCount; i++) 
+#if SAVE
+    void printTemperature(void)
     {
-        printf("%d) %.2f Celsius = %.2f Fahrenheit\n",
-               i + 1,
-               celsiusHistory[i],
-               fahrenheitHistory[i]);
-    }
+        printf("\n--- Conversion History ---\n");
 
-    printf("\n");
-}
+        for (int i = 0; i < historyCount; i++) 
+        {
+            printf("%d) %.2f Celsius = %.2f Fahrenheit\n",
+                i + 1,
+                celsiusHistory[i],
+                fahrenheitHistory[i]);
+        }
+
+        printf("\n");
+    }
+#endif
