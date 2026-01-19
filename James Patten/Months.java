@@ -17,7 +17,8 @@ public class Months
         months[10] = new int[] {30}; 
         months[11] = new int[] {31}; 
 
-        String[] monthNames = {
+        String[] monthNames = 
+        {
             "January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         };
