@@ -46,27 +46,6 @@ public class MagicSquares
             col = newCol;
         }
 
-        /*
-        int [][] magicSquare = new int[number][number];
-        int row = 0;
-        int col = number / 2;
-        magicSquare[row][col] = 1;
-        for (int i = 2; i <= number * number; i++) 
-        {
-            int newRow = (row - 1 + number) % number;
-            int newCol = (col + 1) % number;
-
-            if (magicSquare[newRow][newCol] != 0) 
-            {
-                newRow = (row + 1) % number;
-            }
-            
-            row = newRow;
-            col = newCol;
-            magicSquare[row][col] = i;
-        }
-        */
-
         System.out.println("\n\nThe magic square of size " + number + " is:");
         for (int i = 0; i < number; i++)
         {
